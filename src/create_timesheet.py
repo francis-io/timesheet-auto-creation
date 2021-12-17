@@ -41,9 +41,9 @@ friday_placeholder = re.compile(r"<FRI>")
 days_worked_placeholder = re.compile(r"<DAYSWORKED>")
 computacentre_contact_name_placeholder = re.compile(r"<COMPUTACENTERNAME>")
 
-def create_timesheet(name_to_use):
+def create_timesheet(name_to_use, computacentre_contact_name):
     name = name_to_use
-    computacentre_contact_name = "not mark, change...."
+    #computacentre_contact_name = "not mark, change...."
 
     # Used to document the date the timesheet is created
     todays_date = datetime.today().strftime("%d/%m/%Y")

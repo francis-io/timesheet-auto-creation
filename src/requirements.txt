@@ -1,5 +1,3 @@
 lxml
 python-docx
-Flask==2.0.0
-Flask-WTF
-Flask-Bootstrap4
+Flask
