@@ -1,0 +1,51 @@
+{% extends 'layout.jinja2' %}
+
+{% block styles %}
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/forms.css') }}"
+        type="text/css"
+    />
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="form-wrapper">
+      <h2 class="title">Create Timesheet</h2>
+
+      <form method="POST" action="{{ url_for('get_timesheet_details') }}">
+          {{ form.csrf_token }}
+
+          <fieldset class="form-field">{{ form.name.label }} {{ form.name }}
+            {% if form.name.errors %}
+              <ul class="errors">
+                {% for error in form.name.errors %}
+                  <li class="error">
+                      <i class="fas fa-exclamation"></i> <span class="error-message">{{ error }}</span>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </fieldset>
+
+          <fieldset class="form-field">{{ form.contacts_name.label }} {{ form.contacts_name }}
+            <i class="fas fa-caret-down"></i>
+            {% if form.contacts_name.errors %}
+              <ul class="errors">
+                {% for error in form.contacts_name.errors %}
+                  <li class="error">
+                      <i class="fas fa-exclamation"></i> <span class="error-message">{{ error }}</span>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </fieldset>
+
+          {{ form.submit }}
+
+      </form>
+    </div>
+
+{% endblock %}
