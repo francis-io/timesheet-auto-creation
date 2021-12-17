@@ -10,7 +10,7 @@ form {
   }
 
   .container {
-    padding: 80px;
+    padding: 200px;
     display: flex;
     justify-content: space-around;
   }
@@ -30,11 +30,20 @@ form {
     margin: 0 0 40px 0;
   }
 
+  .body {
+    font-size: 1rem;
+    color: #5f6988;
+    font-weight: 300;
+    border-bottom: 1px solid #dbe3ec;
+    padding-bottom: 5px;
+    margin: 0 0 40px 0;
+  }
+
   .form-wrapper {
     background: white;
-    width: 350px;
+    width: 700px;
     box-shadow: 0 0 5px rgba(65, 67, 144, 0.1);
-    padding: 40px;
+    padding: 30px;
   }
 
   label {

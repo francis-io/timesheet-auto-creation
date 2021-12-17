@@ -2,3 +2,4 @@ lxml
 python-docx
 Flask
 Flask-WTF
+livereload

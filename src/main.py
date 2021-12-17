@@ -3,10 +3,11 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField
 from wtforms.validators import DataRequired
 import os
+from livereload import Server
 from create_timesheet import create_timesheet
 
 # mostly adapted from https://github.com/hackersandslackers/flask-wtform-tutorial
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__, template_folder='/web/templates')
 
 # Flask-WTF requires an encryption key - the string can be anything
 app.secret_key = os.urandom(24)
@@ -38,21 +39,24 @@ def get_timesheet_details():
                                 contact_name=request.form.get("contact_name")))
     return render_template(
         "create_timesheet.jinja2",
-        form=form,
-        template="form-template",
-        title="Create Timesheet"
+        form=form
     )
 
 @app.route('/create_timesheet')
 def create_timesheets():
     name = request.args.get("name")
-    computacentre_contact_name=request.args.get("contact_name")
+    computercenter_contact_name=request.args.get("contact_name")
 
-    timesheet = create_timesheet(name, computacentre_contact_name)
+    timesheet = create_timesheet(name, computercenter_contact_name)
 
     # TODO: clean up files
     return send_file(timesheet, as_attachment=True)
 
 
 if __name__ == '__main__':
+    # TODO: find a better way to do this
+    # app.debug = True
+    # server = Server(app.wsgi_app)
+    # server.serve(port=80, host='0.0.0.0')
+
     app.run(host='0.0.0.0', port=80)

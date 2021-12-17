@@ -13,10 +13,21 @@
 {% block content %}
 
     <div class="form-wrapper">
-      <h2 class="title">Create Timesheet</h2>
+      <h2 class="title">Create Computacenter Timesheet</h2>
 
       <form method="POST" action="{{ url_for('get_timesheet_details') }}">
           {{ form.csrf_token }}
+      <div class="body">
+          WARNING This makes the following assumptions: <br>
+          * You are creating this timesheet on the week you need it for<br>
+          * You want to bill a full 5 days this week<br>
+      <p>
+          This app uses the current date to figure out the start of the week.
+      <p>
+          Please verify the timesheet is correct. You are responsible for correct timesheets, not me!
+
+      </body>
+      <p>
 
           <fieldset class="form-field">{{ form.name.label }} {{ form.name }}
             {% if form.name.errors %}
