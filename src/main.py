@@ -3,7 +3,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField
 from wtforms.validators import DataRequired
 import os
-from livereload import Server
+#from livereload import Server
 from create_timesheet import create_timesheet
 
 # mostly adapted from https://github.com/hackersandslackers/flask-wtform-tutorial

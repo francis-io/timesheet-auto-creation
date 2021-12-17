@@ -1,6 +1,7 @@
 version: "3"
 services:
   web:
-    build: ./src
+    #build: ./src
+    image: timesheet-app:latest
     ports: ['80:80']
-    volumes: ['./src:/web']
+    #volumes: ['./src:/web']

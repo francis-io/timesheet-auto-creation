@@ -5,14 +5,13 @@ help: ## This help.
 
 .PHONY: build
 build:
-	docker build -t timesheet-app:latest src/.
+	docker build -t timesheet-app:latest src/
 
 .PHONY: run
 run:
-	#docker run --rm -it -v $(pwd):/src timesheet-creator:latest
 	docker-compose up --build
 
 .PHONY: push
 push:
-	docker tag timesheet-app:latest markfrancis905/timesheet-app:latest
-	docker push markfrancis905/timesheet-app:v2
+	docker tag timesheet-app:latest markfrancis905/timesheet-app:v3
+	docker push markfrancis905/timesheet-app:v3

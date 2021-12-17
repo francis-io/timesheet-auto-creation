@@ -2,7 +2,7 @@ FROM python:3.10-alpine
 
 RUN apk add --no-cache git libxslt
 
-COPY * /web/
+COPY . /web/
 
 WORKDIR /web
 
