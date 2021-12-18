@@ -42,7 +42,6 @@
           </fieldset>
 
           <fieldset class="form-field">{{ form.contact_name.label }} {{ form.contact_name }}
-            <i class="fas fa-caret-down"></i>
             {% if form.contact_name.errors %}
               <ul class="errors">
                 {% for error in form.contact_name.errors %}
@@ -52,6 +51,9 @@
                 {% endfor %}
               </ul>
             {% endif %}
+          </fieldset>
+
+          <fieldset class="checkbox">{{ form.confirm.label }} {{ form.confirm }}
           </fieldset>
 
           {{ form.submit }}

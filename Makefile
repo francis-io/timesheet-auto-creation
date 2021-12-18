@@ -13,5 +13,5 @@ run:
 
 .PHONY: push
 push:
-	docker tag timesheet-app:latest markfrancis905/timesheet-app:v3
-	docker push markfrancis905/timesheet-app:v3
+	docker tag timesheet-app:latest markfrancis905/timesheet-app:v4
+	docker push markfrancis905/timesheet-app:v4

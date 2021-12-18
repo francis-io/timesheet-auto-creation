@@ -1,13 +1,11 @@
-# timesheet-auto-creation
+# Timesheet Auto Creation
 
 Uses docker.
 
 Run: `make run`
 
 TODO
-* add warning to web page
-* add approvers to a doc
+* add direct email option
+* add rate limiting / password protection
+* add approvers to a different file
 * refactor create code
-* set nice dns
-* code deployment
-* code docker build and upload

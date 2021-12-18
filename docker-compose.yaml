@@ -1,7 +1,7 @@
 version: "3"
 services:
   web:
-    #build: ./src
-    image: timesheet-app:latest
+    build: ./src
+    #image: timesheet-app:latest
     ports: ['80:80']
     #volumes: ['./src:/web']

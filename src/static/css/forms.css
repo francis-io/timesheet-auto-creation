@@ -9,6 +9,12 @@ form {
     padding: 0;
   }
 
+  .checkbox {
+    position: relative;
+    border: 0;
+    padding: 0;
+  }
+
   .container {
     padding: 200px;
     display: flex;
