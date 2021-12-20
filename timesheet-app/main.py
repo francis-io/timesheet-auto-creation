@@ -17,7 +17,7 @@ app = Flask(__name__, template_folder="templates")
 limiter = Limiter(
     app,
     key_func=get_remote_address,
-    default_limits=["200 per day", "50 per hour", "1/second"]
+    default_limits=["200 per day", "50 per hour", "4/second"]
 )
 
 # Flask-WTF requires an encryption key - the string can be anything
@@ -78,7 +78,7 @@ def create_timesheets():
 
 @app.route("/health")
 @limiter.exempt
-def ping():
+def health():
     return Response(status=200)
 
 

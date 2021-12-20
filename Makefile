@@ -14,5 +14,5 @@ run:
 .PHONY: push
 push:
 	# TODO: set tags somewhere else
-	docker tag timesheet-app:latest markfrancis905/timesheet-app:v8
-	docker push markfrancis905/timesheet-app:v8
+	docker tag timesheet-app:latest markfrancis905/timesheet-app:v10
+	docker push markfrancis905/timesheet-app:v10
