@@ -52,7 +52,7 @@ def create_timesheet(name_to_use, computercenter_contact_name):
     # Assumption that you do timesheets on the week you need them
     week_start = get_start_of_week(datetime.today())
 
-    doc = Document("timesheet_template.docx")
+    doc = Document("static/files/timesheet_template.docx")
 
     docx_replace_regex(doc, name_placeholder, name)
     docx_replace_regex(
@@ -66,6 +66,7 @@ def create_timesheet(name_to_use, computercenter_contact_name):
     docx_replace_regex(doc, friday_placeholder, get_date(week_start, 4))
     docx_replace_regex(doc, days_worked_placeholder, "5")
 
+    # the path to save seems relative to where i ran it, not the script
     file_path = "{0}-Timesheet-WC-{1}.docx".format(
         name.replace(" ", "-"), week_start.strftime("%d-%m-%Y")
     )
