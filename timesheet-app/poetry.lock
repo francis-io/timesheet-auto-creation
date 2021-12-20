@@ -58,6 +58,18 @@ async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
 
 [[package]]
+name = "flask-limiter"
+version = "2.0.3"
+description = "Rate limiting for flask applications"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+Flask = ">=2"
+limits = ">=2"
+
+[[package]]
 name = "flask-wtf"
 version = "1.0.0"
 description = "Form rendering, validation, and CSRF protection for Flask with WTForms."
@@ -94,6 +106,14 @@ MarkupSafe = ">=2.0"
 
 [package.extras]
 i18n = ["Babel (>=2.7)"]
+
+[[package]]
+name = "limits"
+version = "2.0.3"
+description = "Rate limiting utilities"
+category = "main"
+optional = false
+python-versions = ">3.7"
 
 [[package]]
 name = "lxml"
@@ -235,7 +255,7 @@ email = ["email-validator"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "2f686e8ea66e14003513ea06a5a1cb03bc1f88293fd8b780bbb800e8d06ff692"
+content-hash = "6bc544aedb3b6c70e9de508c738cb370daa7aafa3e3da6182d04880eebea63c6"
 
 [metadata.files]
 atomicwrites = [
@@ -258,6 +278,11 @@ flask = [
     {file = "Flask-2.0.2-py3-none-any.whl", hash = "sha256:cb90f62f1d8e4dc4621f52106613488b5ba826b2e1e10a33eac92f723093ab6a"},
     {file = "Flask-2.0.2.tar.gz", hash = "sha256:7b2fb8e934ddd50731893bdcdb00fc8c0315916f9fcd50d22c7cc1a95ab634e2"},
 ]
+flask-limiter = [
+    {file = "Flask-Limiter-2.0.3.tar.gz", hash = "sha256:d4a4126aeb4bc0d35a03e77341c2b1f98bdbec1441cda3bc5acd98919afa5513"},
+    {file = "Flask_Limiter-2.0.3-py3-none-any.whl", hash = "sha256:f6e8b5f40e24673808c1bec372756f4fd9beac11988099ca124100cb00a5dc87"},
+    {file = "Flask_Limiter-2.0.3-py3.9.egg", hash = "sha256:b6b8504f215d6cb0378f75ea4e640fed09c257d0fec97e19e81c55a2b1c83671"},
+]
 flask-wtf = [
     {file = "Flask-WTF-1.0.0.tar.gz", hash = "sha256:872fbb17b5888bfc734edbdcf45bc08fb365ca39f69d25dc752465a455517b28"},
     {file = "Flask_WTF-1.0.0-py3-none-any.whl", hash = "sha256:01feccfc395405cea48a3f36c23f0d766e2cc6fd2a5a065ad50ad3e5827ec797"},
@@ -269,6 +294,10 @@ itsdangerous = [
 jinja2 = [
     {file = "Jinja2-3.0.3-py3-none-any.whl", hash = "sha256:077ce6014f7b40d03b47d1f1ca4b0fc8328a692bd284016f806ed0eaca390ad8"},
     {file = "Jinja2-3.0.3.tar.gz", hash = "sha256:611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7"},
+]
+limits = [
+    {file = "limits-2.0.3-py3-none-any.whl", hash = "sha256:a014be021cdcb4e4340ab7b2ec79cba676cf8ebcbd6ff88742f0407f0e7f2e27"},
+    {file = "limits-2.0.3.tar.gz", hash = "sha256:66b35577e3824484712b6d1f1c774ba45628db58cb25b729101eaee06fcf32a0"},
 ]
 lxml = [
     {file = "lxml-4.7.1-cp27-cp27m-macosx_10_14_x86_64.whl", hash = "sha256:d546431636edb1d6a608b348dd58cc9841b81f4116745857b6cb9f8dadb2725f"},

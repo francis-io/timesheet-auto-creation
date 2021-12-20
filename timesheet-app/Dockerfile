@@ -84,10 +84,10 @@ RUN apk del \
         musl-dev \
         musl \
         libffi-dev \
-        libxml2\
+        libxml2 \
         libxml2-dev \
-        libxslt \
         libxslt-dev
+        # libxslt-dev
 
 # # Project initialization:
 # RUN poetry config virtualenvs.create false \

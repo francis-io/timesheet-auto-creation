@@ -1,8 +1,10 @@
-from flask import Flask, render_template, redirect, url_for, send_file, request
+from flask import Flask, render_template, redirect, url_for, send_file, request, Response
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField, BooleanField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, length
 from wtforms.fields import Label
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 import os
 from datetime import datetime, date
 
@@ -12,12 +14,18 @@ from timesheet_app.create_timesheet import create_timesheet, get_start_of_week
 # mostly adapted from https://github.com/hackersandslackers/flask-wtform-tutorial
 app = Flask(__name__, template_folder="templates")
 
+limiter = Limiter(
+    app,
+    key_func=get_remote_address,
+    default_limits=["200 per day", "50 per hour", "1/second"]
+)
+
 # Flask-WTF requires an encryption key - the string can be anything
 app.secret_key = os.urandom(24)
 
 
 class TimesheetForm(FlaskForm):
-    name = StringField("Name", [DataRequired()])
+    name = StringField("Name", [DataRequired(), length(max=30)])
     contact_name = SelectField(
         "Computacenter Contacts Name",
         [DataRequired()],
@@ -67,6 +75,11 @@ def create_timesheets():
 
     # TODO: clean up files
     return send_file(timesheet, as_attachment=True)
+
+@app.route("/health")
+@limiter.exempt
+def ping():
+    return Response(status=200)
 
 
 if __name__ == "__main__":
