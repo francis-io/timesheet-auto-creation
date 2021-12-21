@@ -47,7 +47,7 @@ def get_timesheet_details():
     # https://stackoverflow.com/a/59527398
     form.confirm.label = Label(
         field_id="confirm",
-        text="As of today, {0}, confirm the timesheet start date of {0}".format(
+        text="As of today, {0}, confirm the timesheet start date of {1}".format(
             datetime.today().strftime("%a %d/%m"),
             get_start_of_week(date.today()),
         ),
